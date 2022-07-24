@@ -9,3 +9,7 @@ def about(request):
 
 def main(request):
     return render(request, 'main.html')
+
+def create(request):
+    tasks = Task.objects.all()
+    return render(request, 'create.html', {'tasks':tasks})
