@@ -1,9 +1,10 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from .models import Task
 
 
 def about(request):
-    return render(request, 'about.html')
+    tasks = Task.objects.all()
+    return render(request, 'about.html', {'tasks':tasks})
 
 
 def main(request):

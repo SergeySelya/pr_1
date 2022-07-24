@@ -3,5 +3,6 @@
 О нас
 {% endblock %}
 {% block body %}
-О нас
+
+{% for el in tasks %} {{el.title}} <br> {% endfor %}
 {% endblock %}
