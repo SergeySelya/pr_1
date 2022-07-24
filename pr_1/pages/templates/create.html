@@ -3,6 +3,7 @@
 новая задача
 {% endblock %}
 {% block body %}
+{% csrf_token %}
 <h1>создать новую задачу</h1>
 <form method="post">
     <input type="text" placeholder="Введите название" class="form-control"><br>

@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Task
+from .forms import TaskForm
 
 
 def about(request):
@@ -11,5 +12,9 @@ def main(request):
     return render(request, 'main.html')
 
 def create(request):
+    form = TaskForm()
+    context = {
+        "form": form
+    }
     tasks = Task.objects.all()
-    return render(request, 'create.html', {'tasks':tasks})
+    return render(request, 'create.html')
