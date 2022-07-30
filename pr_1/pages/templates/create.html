@@ -4,6 +4,8 @@
 {% endblock %}
 {% block body %}
 {% csrf_token %}
+{{ title }}
+{{ task }}
 <h1>создать новую задачу</h1>
 <form method="post">
     <input type="text" placeholder="Введите название" class="form-control"><br>
