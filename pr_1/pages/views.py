@@ -13,9 +13,12 @@ def main(request):
 
 
 def create(request):
+    if request.method == "POST":
+        form = TaskForm(request.POST)
+        if form.is_valid():
+            form.save()
     form = TaskForm()
     context = {
         "form": form
     }
-    tasks = Task.objects.all()
     return render(request, 'create.html', context)
