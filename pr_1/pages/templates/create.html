@@ -3,13 +3,11 @@
 новая задача
 {% endblock %}
 {% block body %}
-{% csrf_token %}
-{{ title }}
-{{ task }}
 <h1>создать новую задачу</h1>
 <form method="post">
-    <input type="text" placeholder="Введите название" class="form-control"><br>
-    <textarea type="text" placeholder="Введите описание" class="form-control"></textarea><br>
+    {% csrf_token %}
+    {{ form.title }}<br>
+    {{ form.task }}<br>
     <button type="submit" class="btn btn-success">Добавить</button>
 
 </form>

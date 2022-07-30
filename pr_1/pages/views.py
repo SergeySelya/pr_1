@@ -11,10 +11,11 @@ def about(request):
 def main(request):
     return render(request, 'main.html')
 
+
 def create(request):
     form = TaskForm()
     context = {
         "form": form
     }
     tasks = Task.objects.all()
-    return render(request, 'create.html')
+    return render(request, 'create.html', context)
